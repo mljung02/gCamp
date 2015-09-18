@@ -1,0 +1,37 @@
+.main
+  .container
+    .jumbotron
+      %h1 gCamp
+      %h2 Your life, organized.
+    .row
+      #home-pic-1.col-md-4
+        %p.lead
+          %img.img-responsive{:src => asset_path( 'pic-1.jpg' )}/
+        .panel.panel-default
+          .panel-heading
+            %h3.panel-title Tasks
+          .panel-body
+            Grouped by projects and lists. Just the way you like 'em!
+      #home-pic-2.col-md-4
+        %p.lead
+          %img.img-responsive{:src => asset_path( 'pic-2.jpg' )}/
+        .panel.panel-default
+          .panel-heading
+            %h3.panel-title Permissions
+          .panel-body
+            Fine-grained permissions
+      #home-pic-3.col-md-4
+        %p.lead
+          %img.img-responsive{:src => asset_path( 'pic-1.jpg' )}/
+        .panel.panel-default
+          .panel-heading
+            %h3.panel-title Comments
+          .panel-body
+            %ul
+              %li Comment on tasks and documents
+              %li Get email notifications                
+    - @quotes.each do |quote|
+      .quote
+        %p= quote[:content]
+        %p
+          %em.text-muted - #{quote[:author]}

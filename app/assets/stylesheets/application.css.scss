@@ -25,10 +25,39 @@
 
 .main{
   margin-top: 75px;
+  margin-bottom: 75px;
 }
 
-.container{
-  border: 2px solid black;
+.foot{
+  padding-top: 9px;
+  margin: 20px 0 0;
+  border-top: 1px solid #eeeeee;
+  // display: inline-block;
+}
+
+.footer{
+  padding-bottom: 10px;
+}
+
+.right img{
+  // border: 5px solid black;
+  display: inline-block;
+  height: 25px;
+}
+
+.right{
+  // display: inline-block;
+  float:right;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+body { padding-bottom: 70px; }
+
+.quote {
+  margin-bottom: 25px;
 }
 // 
 // #home-pic-1{
