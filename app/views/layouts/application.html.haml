@@ -10,25 +10,25 @@
       .container
         %a{:href=>'/'}
           %h1.brand gCamp
+          %h2= sam
     = yield
-    
+
     .footer.navbar-fixed-bottom.navbar
       .container
         .foot
           %a{:href=>'/about'} About
           %span
-          |  
+          |
           %a{:href=>'/terms'} Terms
           %span
-          |  
+          |
           %a{:href=>'/faq'} FAQ
           .right
             %a{:href=>'https://www.linkedin.com/'}
-              =image_tag 'linkedin.jpg' 
+              =image_tag 'linkedin.jpg'
             %a{:href=>'https://www.twitter.com/'}
-              =image_tag 'twitter.png' 
+              =image_tag 'twitter.png'
             %a{:href=>'https://www.github.com/'}
-              =image_tag 'github.png' 
+              =image_tag 'github.png'
             %a{:href=>'https://www.galvanize.com/'}
-              =image_tag 'galvanize.png' 
-        
+              =image_tag 'galvanize.png'
