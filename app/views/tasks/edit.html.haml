@@ -1,6 +1,6 @@
 .main
   .container
-    %h1 Create Task
+    %h1 Edit Task
     - if @task.errors.any?
       - @task.errors.full_messages.each do |message|
         %p.alert.alert-danger= message
@@ -12,4 +12,7 @@
         %p
           = f.submit
       %p
-        %a{:href=>tasks_path} Show Tasks
+        %a{:href=>task_path(@task)} Show
+        %span
+        |
+        %a{:href=>tasks_path} Home

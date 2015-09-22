@@ -1,5 +1,15 @@
 .main
   .container
     %h1 All tasks
+    %table
+      - @tasks.each do |task|
+        %tr
+          %td=task[:description]
+          %td
+            %a{:href=>task_path(task)} Show
+          %td
+            %a{:href=>edit_task_path(task)} Edit
+          %td
+            =link_to "Delete", task_path(task), method: :delete
     %p
       %a{:href=>new_task_path} New Task
