@@ -1,0 +1,12 @@
+.main
+  .container
+    %h1 Create Task
+    .form
+      = form_for @task do |f|
+        = f.label :description
+        %p
+          = f.text_field :description
+        %p
+          = f.submit
+      %p
+        %a{:href=>tasks_path} Show Tasks

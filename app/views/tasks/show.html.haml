@@ -1,0 +1,9 @@
+.main
+  .container
+    %h1 Task
+    %p= @task.description
+    %p
+      %a{:href=>edit_task_path(@task)} Edit
+      %span
+      |
+      %a{:href=>tasks_path} Home

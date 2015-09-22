@@ -1,11 +1,11 @@
 .main
+  %a{:name=>'top'}
   .container
     %h1 Frequently Asked Questions
-    %a{:name=>'top'}
     %ul
       - @faqs.each do |faq|
         %li
-          %a{:href=> faq[:slug]}=faq[:question]
+          %a{:href=> '#'+faq[:slug]}=faq[:question]
     - @faqs.each do |faq|
       .faq
         %a{:name=> faq[:slug]}
