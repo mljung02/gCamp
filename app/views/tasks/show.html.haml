@@ -1,11 +1,10 @@
 .main
   .container
-    %h1 Task
+    %h1#edit-header=@task[:description]
+    %a.pull-right.btn.btn-primary{:href=>edit_task_path(@task)} Edit
     -if notice
       %p.alert.alert-success= notice
-    %p= @task.description
-    %p
-      %a{:href=>edit_task_path(@task)} Edit
-      %span
-      |
-      %a{:href=>tasks_path} Home
+    %ol.breadcrumb
+      %li
+        %a{:href=>tasks_path} Home
+      %li=@task[:description]

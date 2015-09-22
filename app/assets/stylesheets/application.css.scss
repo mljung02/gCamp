@@ -57,30 +57,14 @@ a:hover{
 
 body { padding-bottom: 70px; }
 
+form{
+  padding: 15px;
+}
+
 .quote {
   margin-bottom: 25px;
 }
-// 
-// #home-pic-1{
-//   background-image: url('pic-2.jpg');
-//   background-size: cover;
-//   height: 250px;
-//   padding: 10px;
-//   margin: 10px;
-// }
-// 
-// #home-pic-2{
-//   background-image: url('pic-1.jpg');
-//   background-size: cover;
-//   height: 250px;
-//   padding: 10px;
-//   margin: 10px;
-// }
-// 
-// #home-pic-3{
-//   background-image: url('pic-3.jpg');
-//   background-size: cover;
-//   height: 250px;
-//   padding: 10px;
-//   margin: 10px;
-// }
+
+#tasks-header, #edit-header{
+  display: inline-block;
+}

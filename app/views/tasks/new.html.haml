@@ -1,15 +1,19 @@
 .main
   .container
-    %h1 Create Task
+    %h1 New Task
+    %ol.breadcrumb
+      %li
+        %a{:href=>tasks_path} Home
+      %li New Task
+
     - if @task.errors.any?
       - @task.errors.full_messages.each do |message|
         %p.alert.alert-danger= message
     .form
-      = form_for @task do |f|
-        = f.label :description
-        %p
-          = f.text_field :description
-        %p
-          = f.submit
-      %p
-        %a{:href=>tasks_path} Show Tasks
+      = form_for @task, :html=>{:class => 'form-horizontal'} do |f|
+        .form-group
+          = f.label :description, :class=> 'col-md-2'
+          = f.text_field :description, :class=> 'col-md-10'
+        .form-group.col-md-offset-2.col-md-10
+          = f.submit :class => 'btn btn-primary'
+          = link_to "cancel", tasks_path, :class => 'btn btn-default'
