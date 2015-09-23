@@ -11,7 +11,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      80.times {p '*'}
+      puts '*'*80
       p 'hello'
       redirect_to task_path(@task), notice: 'Task successfully created!'
     else
