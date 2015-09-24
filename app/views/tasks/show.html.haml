@@ -8,3 +8,7 @@
       %li
         %a{:href=>tasks_path} Home
       %li=@task[:description]
+    -if @task.completed
+      %p Task Completed!
+    -else
+      %p Task in Progress
