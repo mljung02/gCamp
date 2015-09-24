@@ -1,19 +1,24 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
+    @project = Project.find(params[:project_id])
+    @tasks = Task.where(project_id: params[:project_id])
+    # binding.pry
   end
 
   def new
+    @project = Project.find(params[:project_id])
     @task = Task.new
   end
 
   def create
     @task = Task.new(task_params)
+    @task[:project_id] = params[:project_id]
+    @project = Project.find(params[:project_id])
     if @task.save
       puts '*'*80
       p 'hello'
-      redirect_to task_path(@task), notice: 'Task successfully created!'
+      redirect_to project_tasks_path(@project), notice: 'Task successfully created!'
     else
       render :action => :new
     end
@@ -21,11 +26,12 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+    @task = Task.where(id: params[:id], project_id: params[:project_id])
   end
 
   def edit
-    @task = Task.find(params[:id])
+    @task = Task.where(id: params[:id], project_id: params[:project_id])
+    # @task = Task.find(params[:id])
   end
 
   def update
@@ -48,7 +54,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:description, :completed, :due_date)
+    params.require(:task).permit(:description, :completed, :due_date, :project_id)
   end
 
 end

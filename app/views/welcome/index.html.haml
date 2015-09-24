@@ -1,8 +1,13 @@
 .main
   .container
+    -if notice
+      %p.notice.alert.alert-success=notice
+    -if alert
+      %p.alert.alert-danger=alert
     .jumbotron
       %h1 gCamp
       %h2 Your life, organized.
+
     .row
       #home-pic-1.col-md-4
         %p.lead
@@ -29,7 +34,7 @@
           .panel-body
             %ul
               %li Comment on tasks and documents
-              %li Get email notifications                
+              %li Get email notifications
     - @quotes.each do |quote|
       .quote
         %p= quote[:content]

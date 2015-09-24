@@ -1,0 +1,18 @@
+.main
+  .container
+    %h1#users-header All Users
+    .pull-right
+      %a.btn.btn-info{:href=>new_user_registration_path} New User
+    %table.table
+      %thead
+        %th Name
+        %th Email
+      - @users.each do |user|
+        %tr
+          %td
+            %a{:href=>edit_user_registration_path(user)}=user[:name]
+          %td
+            =user.email
+          -# %td.text-right
+          -#   %a.btn.btn-info{:href=>edit_user_path(user)} Edit
+          -#   =link_to "Delete", user_path(user), method: :delete, :class=>'btn btn-danger'

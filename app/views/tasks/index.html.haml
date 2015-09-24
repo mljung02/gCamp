@@ -2,7 +2,7 @@
   .container
     %h1#tasks-header All Tasks
     .pull-right
-      %a.btn.btn-info{:href=>new_task_path} New Task
+      %a.btn.btn-info{:href=>new_project_task_path} New Task
     %table.table
       %thead
         %th Description
@@ -10,9 +10,9 @@
       - @tasks.each do |task|
         %tr
           %td
-            %a{:href=>task_path(task)}=task[:description]
+            =link_to task[:description], project_task_path(@project, task)
           %td
             =task.due_date
           %td.text-right
-            %a.btn.btn-info{:href=>edit_task_path(task)} Edit
-            =link_to "Delete", task_path(task), method: :delete, :class=>'btn btn-danger'
+            %a.btn.btn-info{:href=>edit_project_task_path(@project, task)} Edit
+            =link_to "Delete", project_task_path(@project, task), method: :delete, :class=>'btn btn-danger'
